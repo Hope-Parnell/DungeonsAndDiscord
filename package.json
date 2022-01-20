@@ -13,5 +13,18 @@
   "dependencies": {
     "discord.js": "^13.6.0",
     "dotenv": "^14.2.0"
-  }
+  },
+  "engines": {
+    "npm": "8.3.0",
+    "node": "v16.13.1"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Hope-Parnell/DungeonsAndDiscord.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Hope-Parnell/DungeonsAndDiscord/issues"
+  },
+  "homepage": "https://github.com/Hope-Parnell/DungeonsAndDiscord#readme"
 }
