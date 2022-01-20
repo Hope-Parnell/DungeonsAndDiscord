@@ -12,6 +12,16 @@ exports.roll = (msg, ...args) => {
     input = args[i];
     if (input.includes('d')) {
       const dice = input.split('d');
+      if (Number(dice[0]) < 1) {
+        msg.reply(`Invalid input: ${args[i]}: Number of dice must be a positive number.
+        Example: 2d10`);
+        return;
+      }
+      if (Number(dice[1]) < 1) {
+        msg.reply(`Invalid input: ${args[i]}: Number of sides must be a positive number.
+        Example: 2d10`);
+        return;
+      }
       for (let j = 0; j < Number(dice[0]); j++) {
         const roll = Math.floor((Math.random() * Number(dice[1]) + 1));
         rolls.push(roll);
@@ -19,12 +29,20 @@ exports.roll = (msg, ...args) => {
       }
     } else {
       n = Number(input);
+      if (!n) {
+        msg.reply(`Invalid input: ${args[i]}`);
+        return;
+      }
     }
     if (args[i - 1] === '-') {
       total -= n;
-    } else {
+    } else if (args[i - 1] === '-') {
       total += n;
+    } else {
+      msg.reply(`Invalid operator [${args[i - 1]}]: Can only add or subtract.`);
+      return;
     }
   }
-  msg.reply('Your total is ' + total.toString() + '\nRolls: ' + rolls.join(', '));
+  msg.reply(`Your total is ${total.toString()}
+  Rolls: ${rolls.join(', ')}`);
 };
