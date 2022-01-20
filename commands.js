@@ -7,7 +7,7 @@ exports.roll = (msg, ...args) => {
   let total = 0;
   let input;
   const rolls = [];
-  for (let i = 1; i < args.length; i += 2) {
+  for (let i = 0; i < args.length; i += 2) {
     let n = 0;
     input = args[i];
     if (input.includes('d')) {
