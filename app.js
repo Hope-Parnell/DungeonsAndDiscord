@@ -3,7 +3,7 @@ require('dotenv').config();
 const client = new Discord.Client({ intents: ['GUILDS', 'GUILD_MEMBERS', 'GUILD_EMOJIS_AND_STICKERS', 'GUILD_INVITES', 'GUILD_MESSAGES', 'GUILD_MESSAGE_REACTIONS', 'DIRECT_MESSAGES', 'DIRECT_MESSAGE_REACTIONS', 'GUILD_INTEGRATIONS', 'GUILD_PRESENCES'] });
 client.on('ready', () => {
   console.log('BOT is ready');
-  client.channels.cache.get('929882975145984051').send('I LIVE!!!');
+  client.channels.cache.get('933870629915066368').send('Changes have gone live!');
 });
 client.login(process.env.BOT_TOKEN);
 
