@@ -7,17 +7,9 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node app.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Hope-Parnell/DungeonsAndDiscord.git"
-  },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Hope-Parnell/DungeonsAndDiscord/issues"
-  },
-  "homepage": "https://github.com/Hope-Parnell/DungeonsAndDiscord#readme",
   "dependencies": {
     "@discordjs/builders": "^0.11.0",
     "@discordjs/rest": "^0.2.0-canary.0",
