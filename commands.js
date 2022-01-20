@@ -34,10 +34,10 @@ exports.roll = (msg, ...args) => {
         return;
       }
     }
-    if (args[i - 1] === '-') {
-      total -= n;
-    } else if (args[i - 1] === '-') {
+    if (i === 0 || args[i - 1] === '+') {
       total += n;
+    } else if (args[i - 1] === '-') {
+      total -= n;
     } else {
       msg.reply(`Invalid operator [${args[i - 1]}]: Can only add or subtract.`);
       return;
