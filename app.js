@@ -14,7 +14,7 @@ client.on('guildMemberAdd', member => {
 
 let cmdCharacter = '*';
 const commands = require('./commands');
-commands.changeC = (msg, c) => {
+commands.cmdC = (msg, c) => {
   if (c) { cmdCharacter = c; }
   msg.reply('Command character is \'' + cmdCharacter + '\'');
 };
