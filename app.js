@@ -15,14 +15,13 @@ client.on('guildMemberAdd', member => {
 let cmdCharacter = '*';
 const commands = require('./commands');
 commands.changeC = (msg, c) => {
-  const testStr = c + 'test';
-  if (testStr.startsWith(c)) { cmdCharacter = c; }
+  if (c) { cmdCharacter = c; }
   msg.reply('Command character is \'' + cmdCharacter + '\'');
 };
 
 client.on('messageCreate', (msg) => {
   if (msg.content.startsWith(cmdCharacter) || msg.content.startsWith('*')) {
-    const cmd = msg.content.split(' ')[0].slice(1);
+    const cmd = msg.content.split(' ')[0].slice(cmdCharacter.length);
     const args = msg.content.split(' ').slice(1);
     if (typeof commands[cmd] === 'function') {
       commands[cmd](msg, ...args);
