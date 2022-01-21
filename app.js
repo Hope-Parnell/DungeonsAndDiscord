@@ -12,16 +12,16 @@ client.on('guildMemberAdd', member => {
   channel.send('Welcome ' + member.displayName + '!');
 });
 
-let cmdCharacter = '*';
+let cmdPromt = '*';
 const commands = require('./commands');
-commands.cmdC = (msg, c) => {
-  if (c) { cmdCharacter = c; }
-  msg.reply('Command character is \'' + cmdCharacter + '\'');
+commands.cmd = (msg, c) => {
+  if (c) { cmdPromt = c; }
+  msg.reply('Command promt is \'' + cmdPromt + '\'');
 };
 
 client.on('messageCreate', (msg) => {
-  if (msg.content.startsWith(cmdCharacter) || msg.content.startsWith('*')) {
-    const cmd = msg.content.split(' ')[0].slice(cmdCharacter.length);
+  if (msg.content.startsWith(cmdPromt) || msg.content.startsWith('*')) {
+    const cmd = msg.content.split(' ')[0].slice(cmdPromt.length);
     const args = msg.content.split(' ').slice(1);
     if (typeof commands[cmd] === 'function') {
       commands[cmd](msg, ...args);
