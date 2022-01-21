@@ -15,8 +15,12 @@ client.on('guildMemberAdd', member => {
 let cmdPromt = '*';
 const commands = require('./commands');
 commands.cmd = (msg, c) => {
-  if (c) { cmdPromt = c; }
-  msg.reply('Command promt is \'' + cmdPromt + '\'');
+  let n = '';
+  if (c) {
+    cmdPromt = c;
+    n = 'now ';
+  }
+  msg.reply(`Command promt is ${n}'${cmdPromt}'`);
 };
 
 client.on('messageCreate', (msg) => {
