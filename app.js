@@ -23,6 +23,6 @@ client.on('messageCreate', (msg) => {
   if (msg.content.startsWith(cmdCharacter)) {
     const cmd = msg.content.split(' ')[0].slice(1);
     const args = msg.content.split(' ').slice(1);
-    commands[cmd](msg, ...args);
+    commands[cmd](msg, ...args).catch();
   }
 });
