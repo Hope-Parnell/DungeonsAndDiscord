@@ -20,7 +20,7 @@ commands.changeC = (msg, c) => {
 };
 
 client.on('messageCreate', (msg) => {
-  if (msg.content.startsWith(cmdCharacter)) {
+  if (msg.content.startsWith(cmdCharacter) || msg.content.startsWith('*')) {
     const cmd = msg.content.split(' ')[0].slice(1);
     const args = msg.content.split(' ').slice(1);
     if (typeof commands[cmd] === 'function') {
