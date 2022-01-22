@@ -6,13 +6,14 @@ client.on('ready', () => {
   client.channels.cache.get('933870629915066368').send('Changes have gone live!');
 });
 client.login(process.env.BOT_TOKEN);
+client.user.setActivity('Playing D&D | &help');
 
 client.on('guildMemberAdd', member => {
   const channel = member.guild.channels.cache.find(c => c.name === 'general');
   channel.send('Welcome ' + member.displayName + '!');
 });
 
-let cmdPromt = '*';
+let cmdPromt = '&';
 const commands = require('./commands');
 commands.cmd = (msg, c) => {
   let n = '';
@@ -24,7 +25,7 @@ commands.cmd = (msg, c) => {
 };
 
 client.on('messageCreate', (msg) => {
-  if (msg.content.startsWith(cmdPromt) || msg.content.startsWith('*')) {
+  if (msg.content.startsWith(cmdPromt) || msg.content.startsWith('&')) {
     const cmd = msg.content.split(' ')[0].slice(cmdPromt.length);
     const args = msg.content.split(' ').slice(1);
     if (typeof commands[cmd] === 'function') {

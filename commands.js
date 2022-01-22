@@ -1,7 +1,7 @@
 const { MessageEmbed } = require('discord.js');
 
 exports.lol = (msg, ...args) => {
-  msg.reply('You\'re so funny');
+  msg.reply('You\'re so funny!');
 };
 
 exports.roll = (msg, ...args) => {
@@ -83,5 +83,11 @@ exports.hero = (msg, args) => {
     msg.reply({ embeds: [heroEmbed] });
   } else {
     msg.reply('Failed To Create Hero');
+  }
+};
+
+exports.help = (msg, cmd) => {
+  if (!cmd) {
+    msg.author.send({ embeds: [require('./help').helpMsg] });
   }
 };
