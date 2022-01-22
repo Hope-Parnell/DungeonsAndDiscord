@@ -1,3 +1,4 @@
+const { MessageEmbed } = require('discord.js');
 
 exports.lol = (msg, ...args) => {
   msg.reply('You\'re so funny');
@@ -50,10 +51,10 @@ exports.roll = (msg, ...args) => {
 exports.hero = (msg, args) => {
   const classes = require('./adventurers').classes;
   const hero = new classes[Math.floor((Math.random() * classes.length))]();
-  const heroEmbed = {
-    title: 'Your Adventerer',
-    color: '#C284FF',
-    feilds: [
+  const heroEmbed = new MessageEmbed()
+    .setTitle('Your Adventerer')
+    .setColor('#C284FF')
+    .addfeilds(
       { name: 'class', value: typeof hero, inline: true },
       { name: 'race', value: hero.race, inline: true },
       {
@@ -66,8 +67,7 @@ exports.hero = (msg, args) => {
         Charisma: ${hero.charisma}`,
         inline: false
       }
-    ]
-  };
+    );
   if (hero) {
     msg.reply({ embeds: heroEmbed });
   } else {
