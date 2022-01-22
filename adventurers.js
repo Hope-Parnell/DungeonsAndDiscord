@@ -12,7 +12,7 @@ class Barbarian {
     this.intelligence = stats[5];
     this.wisdom = stats[4];
     this.charisma = stats[3];
-    raceStat();
+    raceStat(this);
   }
 }
 
@@ -28,7 +28,7 @@ class Bard {
     this.intelligence = stats[3];
     this.wisdom = stats[4];
     this.charisma = stats[0];
-    raceStat();
+    raceStat(this);
   }
 }
 
@@ -44,7 +44,7 @@ class Cleric {
     this.intelligence = stats[4];
     this.wisdom = stats[0];
     this.charisma = stats[5];
-    raceStat();
+    raceStat(this);
   }
 }
 
@@ -60,7 +60,7 @@ class Druid {
     this.intelligence = stats[3];
     this.wisdom = stats[0];
     this.charisma = stats[5];
-    raceStat();
+    raceStat(this);
   }
 }
 
@@ -76,7 +76,7 @@ class Fighter {
     this.intelligence = stats[5];
     this.wisdom = stats[3];
     this.charisma = stats[4];
-    raceStat();
+    raceStat(this);
   }
 }
 
@@ -92,7 +92,7 @@ class Monk {
     this.intelligence = stats[4];
     this.wisdom = stats[1];
     this.charisma = stats[5];
-    raceStat();
+    raceStat(this);
   }
 }
 
@@ -108,7 +108,7 @@ class Paladin {
     this.intelligence = stats[5];
     this.wisdom = stats[4];
     this.charisma = stats[1];
-    raceStat();
+    raceStat(this);
   }
 }
 
@@ -124,7 +124,7 @@ class Ranger {
     this.intelligence = stats[4];
     this.wisdom = stats[1];
     this.charisma = stats[3];
-    raceStat();
+    raceStat(this);
   }
 }
 
@@ -140,7 +140,7 @@ class Rogue {
     this.intelligence = stats[2];
     this.wisdom = stats[4];
     this.charisma = stats[1];
-    raceStat();
+    raceStat(this);
   }
 }
 
@@ -156,7 +156,7 @@ class Sorcerer {
     this.intelligence = stats[4];
     this.wisdom = stats[3];
     this.charisma = stats[0];
-    raceStat();
+    raceStat(this);
   }
 }
 
@@ -172,7 +172,7 @@ class Warlock {
     this.intelligence = stats[3];
     this.wisdom = stats[4];
     this.charisma = stats[0];
-    raceStat();
+    raceStat(this);
   }
 }
 
@@ -188,7 +188,7 @@ class Wizard {
     this.intelligence = stats[0];
     this.wisdom = stats[3];
     this.charisma = stats[4];
-    raceStat();
+    raceStat(this);
   }
 }
 
