@@ -6,6 +6,7 @@ client.on('ready', () => {
   client.channels.cache.get('933870629915066368').send('Changes have gone live!');
 });
 client.login(process.env.BOT_TOKEN);
+client.user.setActivity('D&D | &help', { type: 'PLAYING' });
 
 client.on('guildMemberAdd', member => {
   const channel = member.guild.channels.cache.find(c => c.name === 'general');
