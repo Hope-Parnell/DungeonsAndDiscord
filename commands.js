@@ -13,7 +13,8 @@ exports.roll = (msg, ...args) => {
     input = args[i];
     if (input.includes('d')) {
       const dice = input.split('d');
-      if (Number(dice[0]) < 1) {
+      if (Number(dice[0]) < 1 || !Number(dice[0])) {
+        console.log(dice[0], Number(dice[0]));
         msg.reply(`Invalid input: ${args[i]}: Number of dice must be a positive number.
         Example: 2d10`);
         return;
