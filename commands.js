@@ -23,6 +23,14 @@ exports.roll = (msg, ...args) => {
         Example: 2d10`);
         return;
       }
+      if (Number(dice[0]) > 10000000) {
+        msg.reply('You do **NOT** need more than **TEN MILLION** dice');
+        return;
+      }
+      if (Number(dice[1]) > 10000000) {
+        msg.reply('Your dice rolled away due to too many sides!');
+        return;
+      }
       for (let j = 0; j < Number(dice[0]); j++) {
         const roll = Math.floor((Math.random() * Number(dice[1]) + 1));
         rolls.push(roll);
