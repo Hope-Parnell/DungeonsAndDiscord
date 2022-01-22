@@ -69,7 +69,7 @@ exports.hero = (msg, args) => {
       }
     );
   if (hero) {
-    msg.reply({ embeds: heroEmbed });
+    msg.reply({ embeds: [heroEmbed] });
   } else {
     msg.reply('Failed To Create Hero');
   }
