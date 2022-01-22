@@ -46,3 +46,13 @@ exports.roll = (msg, ...args) => {
   msg.reply(`Your total is ${total.toString()}
   Rolls: ${rolls.join(', ')}`);
 };
+
+exports.hero = (msg, args) => {
+  const classes = require('./adventurers').classes;
+  const hero = new classes[Math.floor((Math.random() * classes.length))]();
+  if (hero) {
+    msg.reply('Hero Created');
+  } else {
+    msg.reply('Failed To Create Hero');
+  }
+};
