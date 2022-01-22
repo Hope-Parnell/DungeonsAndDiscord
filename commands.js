@@ -55,11 +55,11 @@ exports.hero = (msg, args) => {
     .setTitle('Your Adventerer')
     .setColor('#C284FF')
     .addFields(
-      { name: 'class', value: hero.name, inline: true },
-      { name: 'race', value: hero.race, inline: true },
-      { name: 'background', value: hero.background, inline: true },
+      { name: 'Class', value: hero.name, inline: true },
+      { name: 'Race', value: hero.race, inline: true },
+      { name: 'Background', value: hero.background, inline: true },
       {
-        name: 'stats',
+        name: 'Stats',
         value: `Strength: ${hero.strength}
         Dexterity: ${hero.dexterity}
         Constitution: ${hero.constitution}
