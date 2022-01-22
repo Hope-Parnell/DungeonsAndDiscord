@@ -2,6 +2,7 @@ const backgrounds = ['Acolyte', 'Charlatan', 'Criminal', 'Entertainer', 'Folk He
 const races = ['Dragonborn', 'Dwarf', 'Elf', 'Gnome', 'Half-Elf', 'Halfling', 'Half-Orc', 'Human', 'Tiefling'];
 class Barbarian {
   constructor () {
+    this.name = 'Barbarian';
     this.background = backgrounds[Math.floor(Math.random() * backgrounds.length)];
     this.race = races[Math.floor(Math.random() * races.length)];
     let stats = [rollStat(), rollStat(), rollStat(), rollStat(), rollStat(), rollStat()];
@@ -12,12 +13,13 @@ class Barbarian {
     this.intelligence = stats[5];
     this.wisdom = stats[4];
     this.charisma = stats[3];
-    raceStat();
+    raceStat(this);
   }
 }
 
 class Bard {
   constructor () {
+    this.name = 'Bard';
     this.background = backgrounds[Math.floor(Math.random() * backgrounds.length)];
     this.race = races[Math.floor(Math.random() * races.length)];
     let stats = [rollStat(), rollStat(), rollStat(), rollStat(), rollStat(), rollStat()];
@@ -28,12 +30,13 @@ class Bard {
     this.intelligence = stats[3];
     this.wisdom = stats[4];
     this.charisma = stats[0];
-    raceStat();
+    raceStat(this);
   }
 }
 
 class Cleric {
   constructor () {
+    this.name = 'Cleric';
     this.background = backgrounds[Math.floor(Math.random() * backgrounds.length)];
     this.race = races[Math.floor(Math.random() * races.length)];
     let stats = [rollStat(), rollStat(), rollStat(), rollStat(), rollStat(), rollStat()];
@@ -44,12 +47,13 @@ class Cleric {
     this.intelligence = stats[4];
     this.wisdom = stats[0];
     this.charisma = stats[5];
-    raceStat();
+    raceStat(this);
   }
 }
 
 class Druid {
   constructor () {
+    this.name = 'Druid';
     this.background = backgrounds[Math.floor(Math.random() * backgrounds.length)];
     this.race = races[Math.floor(Math.random() * races.length)];
     let stats = [rollStat(), rollStat(), rollStat(), rollStat(), rollStat(), rollStat()];
@@ -60,12 +64,13 @@ class Druid {
     this.intelligence = stats[3];
     this.wisdom = stats[0];
     this.charisma = stats[5];
-    raceStat();
+    raceStat(this);
   }
 }
 
 class Fighter {
   constructor () {
+    this.name = 'Fighter';
     this.background = backgrounds[Math.floor(Math.random() * backgrounds.length)];
     this.race = races[Math.floor(Math.random() * races.length)];
     let stats = [rollStat(), rollStat(), rollStat(), rollStat(), rollStat(), rollStat()];
@@ -76,12 +81,13 @@ class Fighter {
     this.intelligence = stats[5];
     this.wisdom = stats[3];
     this.charisma = stats[4];
-    raceStat();
+    raceStat(this);
   }
 }
 
 class Monk {
   constructor () {
+    this.name = 'Monk';
     this.background = backgrounds[Math.floor(Math.random() * backgrounds.length)];
     this.race = races[Math.floor(Math.random() * races.length)];
     let stats = [rollStat(), rollStat(), rollStat(), rollStat(), rollStat(), rollStat()];
@@ -92,12 +98,13 @@ class Monk {
     this.intelligence = stats[4];
     this.wisdom = stats[1];
     this.charisma = stats[5];
-    raceStat();
+    raceStat(this);
   }
 }
 
 class Paladin {
   constructor () {
+    this.name = 'Paladin';
     this.background = backgrounds[Math.floor(Math.random() * backgrounds.length)];
     this.race = races[Math.floor(Math.random() * races.length)];
     let stats = [rollStat(), rollStat(), rollStat(), rollStat(), rollStat(), rollStat()];
@@ -108,12 +115,13 @@ class Paladin {
     this.intelligence = stats[5];
     this.wisdom = stats[4];
     this.charisma = stats[1];
-    raceStat();
+    raceStat(this);
   }
 }
 
 class Ranger {
   constructor () {
+    this.name = 'Ranger';
     this.background = backgrounds[Math.floor(Math.random() * backgrounds.length)];
     this.race = races[Math.floor(Math.random() * races.length)];
     let stats = [rollStat(), rollStat(), rollStat(), rollStat(), rollStat(), rollStat()];
@@ -124,12 +132,13 @@ class Ranger {
     this.intelligence = stats[4];
     this.wisdom = stats[1];
     this.charisma = stats[3];
-    raceStat();
+    raceStat(this);
   }
 }
 
 class Rogue {
   constructor () {
+    this.name = 'Rogue';
     this.background = backgrounds[Math.floor(Math.random() * backgrounds.length)];
     this.race = races[Math.floor(Math.random() * races.length)];
     let stats = [rollStat(), rollStat(), rollStat(), rollStat(), rollStat(), rollStat()];
@@ -140,12 +149,13 @@ class Rogue {
     this.intelligence = stats[2];
     this.wisdom = stats[4];
     this.charisma = stats[1];
-    raceStat();
+    raceStat(this);
   }
 }
 
 class Sorcerer {
   constructor () {
+    this.name = 'Sorcerer';
     this.background = backgrounds[Math.floor(Math.random() * backgrounds.length)];
     this.race = races[Math.floor(Math.random() * races.length)];
     let stats = [rollStat(), rollStat(), rollStat(), rollStat(), rollStat(), rollStat()];
@@ -156,12 +166,13 @@ class Sorcerer {
     this.intelligence = stats[4];
     this.wisdom = stats[3];
     this.charisma = stats[0];
-    raceStat();
+    raceStat(this);
   }
 }
 
 class Warlock {
   constructor () {
+    this.name = 'Warlock';
     this.background = backgrounds[Math.floor(Math.random() * backgrounds.length)];
     this.race = races[Math.floor(Math.random() * races.length)];
     let stats = [rollStat(), rollStat(), rollStat(), rollStat(), rollStat(), rollStat()];
@@ -172,12 +183,13 @@ class Warlock {
     this.intelligence = stats[3];
     this.wisdom = stats[4];
     this.charisma = stats[0];
-    raceStat();
+    raceStat(this);
   }
 }
 
 class Wizard {
   constructor () {
+    this.name = 'Wizard';
     this.background = backgrounds[Math.floor(Math.random() * backgrounds.length)];
     this.race = races[Math.floor(Math.random() * races.length)];
     let stats = [rollStat(), rollStat(), rollStat(), rollStat(), rollStat(), rollStat()];
@@ -188,7 +200,7 @@ class Wizard {
     this.intelligence = stats[0];
     this.wisdom = stats[3];
     this.charisma = stats[4];
-    raceStat();
+    raceStat(this);
   }
 }
 

@@ -1,3 +1,4 @@
+const { MessageEmbed } = require('discord.js');
 
 exports.lol = (msg, ...args) => {
   msg.reply('You\'re so funny');
@@ -22,6 +23,14 @@ exports.roll = (msg, ...args) => {
         Example: 2d10`);
         return;
       }
+      if (Number(dice[0]) > 10000000) {
+        msg.reply('You do **NOT** need more than **TEN MILLION** dice');
+        return;
+      }
+      if (Number(dice[1]) > 10000000) {
+        msg.reply('Your dice rolled away due to too many sides!');
+        return;
+      }
       for (let j = 0; j < Number(dice[0]); j++) {
         const roll = Math.floor((Math.random() * Number(dice[1]) + 1));
         rolls.push(roll);
@@ -43,15 +52,35 @@ exports.roll = (msg, ...args) => {
       return;
     }
   }
+  let cont = '';
+  if (rolls.length > 100) { cont = '...'; }
   msg.reply(`Your total is ${total.toString()}
-  Rolls: ${rolls.join(', ')}`);
+  Rolls: ${rolls.slice(0, 100).join(', ')}${cont}`);
 };
 
 exports.hero = (msg, args) => {
   const classes = require('./adventurers').classes;
   const hero = new classes[Math.floor((Math.random() * classes.length))]();
+  const heroEmbed = new MessageEmbed()
+    .setTitle('Your Adventerer')
+    .setColor('#C284FF')
+    .addFields(
+      { name: 'Class', value: hero.name, inline: true },
+      { name: 'Race', value: hero.race, inline: true },
+      { name: 'Background', value: hero.background, inline: true },
+      {
+        name: 'Stats',
+        value: `Strength: ${hero.strength}
+        Dexterity: ${hero.dexterity}
+        Constitution: ${hero.constitution}
+        Intelligence: ${hero.intelligence}
+        Wisdom: ${hero.wisdom}
+        Charisma: ${hero.charisma}`,
+        inline: false
+      }
+    );
   if (hero) {
-    msg.reply('Hero Created');
+    msg.reply({ embeds: [heroEmbed] });
   } else {
     msg.reply('Failed To Create Hero');
   }
