@@ -14,12 +14,11 @@ exports.roll = (msg, ...args) => {
     if (input.includes('d')) {
       const dice = input.split('d');
       if (Number(dice[0]) < 1 || !Number(dice[0])) {
-        console.log(dice[0], Number(dice[0]));
         msg.reply(`Invalid input: ${args[i]}: Number of dice must be a positive number.
         Example: 2d10`);
         return;
       }
-      if (Number(dice[1]) < 1) {
+      if (Number(dice[1]) < 1 || !Number(dice[0])) {
         msg.reply(`Invalid input: ${args[i]}: Number of sides must be a positive number.
         Example: 2d10`);
         return;
@@ -40,7 +39,7 @@ exports.roll = (msg, ...args) => {
     } else {
       n = Number(input);
       if (!n) {
-        msg.reply(`Invalid input: ${args[i]}`);
+        msg.reply(`Invalid input: ${args[i]}: Must be a number.`);
         return;
       }
     }
