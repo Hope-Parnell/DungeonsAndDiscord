@@ -54,7 +54,7 @@ exports.hero = (msg, args) => {
   const heroEmbed = new MessageEmbed()
     .setTitle('Your Adventerer')
     .setColor('#C284FF')
-    .addfeilds(
+    .addFields(
       { name: 'class', value: typeof hero, inline: true },
       { name: 'race', value: hero.race, inline: true },
       {
