@@ -57,6 +57,7 @@ exports.hero = (msg, args) => {
     .addFields(
       { name: 'class', value: typeof hero, inline: true },
       { name: 'race', value: hero.race, inline: true },
+      { name: 'background', value: hero.background, inline: true },
       {
         name: 'stats',
         value: `Strength: ${hero.strength}
