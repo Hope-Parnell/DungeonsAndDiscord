@@ -44,8 +44,10 @@ exports.roll = (msg, ...args) => {
       return;
     }
   }
+  let cont = '';
+  if (rolls.length > 100) { cont = '...'; }
   msg.reply(`Your total is ${total.toString()}
-  Rolls: ${rolls.join(', ')}`);
+  Rolls: ${rolls.slice(0, 100).join(', ')}${cont}`);
 };
 
 exports.hero = (msg, args) => {
