@@ -55,7 +55,7 @@ exports.hero = (msg, args) => {
     .setTitle('Your Adventerer')
     .setColor('#C284FF')
     .addFields(
-      { name: 'class', value: typeof hero, inline: true },
+      { name: 'class', value: hero.name, inline: true },
       { name: 'race', value: hero.race, inline: true },
       { name: 'background', value: hero.background, inline: true },
       {
