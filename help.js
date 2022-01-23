@@ -148,10 +148,12 @@ exports.roll = new MessageEmbed()
       **Bot reply**: Your total is 26
       Rolls: 3, 3, 5, 6, 1, 2, 4
 
-
       &roll 2d4 + 7 + 1d6
       **Bot reply**: Your total is 13
-      Rolls: 2, 3, 1`
+      Rolls: 2, 3, 1
+      &roll 2d8 + 7 - 2d4 + 6 - 2
+      **Bot reply**: Your total is 14
+      Rolls: 7, 1, 4, 1`
     }
   )
   .setFooter({ text: '<> is used to signify input. Do not include them in your command.' });
