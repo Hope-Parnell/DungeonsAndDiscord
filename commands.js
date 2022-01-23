@@ -18,7 +18,7 @@ exports.roll = (msg, ...args) => {
         Example: 2d10`);
         return;
       }
-      if (Number(dice[1]) < 1 || !Number(dice[0])) {
+      if (Number(dice[1]) < 1 || !Number(dice[1])) {
         msg.reply(`Invalid input: ${args[i]}: Number of sides must be a positive number.
         Example: 2d10`);
         return;
@@ -32,6 +32,10 @@ exports.roll = (msg, ...args) => {
         return;
       }
       for (let j = 0; j < Number(dice[0]); j++) {
+        if (rolls.length >= 10000000) {
+          msg.reply('You do **NOT** need more than **TEN MILLION** dice');
+          return;
+        }
         const roll = Math.floor((Math.random() * Number(dice[1]) + 1));
         rolls.push(roll);
         n += roll;
@@ -87,7 +91,13 @@ exports.hero = (msg, args) => {
 };
 
 exports.help = (msg, cmd) => {
+  const helpPages = require('./help');
   if (!cmd) {
-    msg.author.send({ embeds: [require('./help').helpMsg] });
+    msg.author.send({ embeds: [helpPages.helpMsg] });
+  } else if (cmd === 'help') {
+    msg.reply('That seems a little redundant, but okay...');
+    msg.author.send({ embeds: [helpPages.helpHelp] });
+  } else {
+    msg.author.send({ embeds: [helpPages[cmd]] });
   }
 };
