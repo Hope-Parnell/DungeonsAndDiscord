@@ -97,6 +97,8 @@ exports.help = (msg, cmd) => {
   } else if (cmd === 'help') {
     msg.reply('That seems a little redundant, but okay...');
     msg.author.send({ embeds: [helpPages.helpHelp] });
+  } else if (!helpPages[cmd]) {
+    msg.reply(`**${cmd}** is not one of my commands use **&help** for available commands.`);
   } else {
     msg.author.send({ embeds: [helpPages[cmd]] });
   }
