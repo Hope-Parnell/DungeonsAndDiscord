@@ -9,7 +9,7 @@ client.login(process.env.BOT_TOKEN);
 
 client.on('guildMemberAdd', member => {
   const channel = member.guild.channels.cache.find(c => c.name === 'general');
-  channel.send('Welcome ' + member.displayName + '!');
+  if (channel) { channel.send('Welcome ' + member.displayName + '!'); }
 });
 
 let cmdPromt = '&';
