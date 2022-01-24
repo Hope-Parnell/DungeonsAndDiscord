@@ -7,15 +7,15 @@ exports.lol = (msg, ...args) => {
 exports.roll = (msg, ...args) => {
   let total = 0;
   let input;
-  let n = 0;
   let roll;
   const rolls = [];
   if (args.length === 0) {
     roll = Math.floor((Math.random() * 20) + 1);
     rolls.push(roll);
-    n += roll;
+    total += roll;
   }
   for (let i = 0; i < args.length; i += 2) {
+    let n = 0;
     input = args[i];
     if (input.includes('d')) {
       const dice = input.split('d');
