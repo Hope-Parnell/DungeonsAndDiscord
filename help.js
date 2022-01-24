@@ -10,6 +10,7 @@ exports.helpMsg = new MessageEmbed()
     {
       name: 'Core',
       value: `**cmd** - tells/changes the command prompt
+      **hello** - replies with 'Hi!'
       **help <command>** - Displays the help page for a specific command`
     },
     {
@@ -44,6 +45,10 @@ exports.helpHelp = new MessageEmbed()
       value: 'sends help page for **cmd**'
     },
     {
+      name: 'help hello',
+      value: 'sends help page for **hello**'
+    },
+    {
       name: 'help hero',
       value: 'sends help page for **hero**'
     },
@@ -69,9 +74,9 @@ exports.cmd = new MessageEmbed()
       value: `tells/changes the command prompt
       If a string is specified, the string can now be used in place of '&' for commands
       The bot replies with the currently set string.
-      *Currently not server exclusive, so string will be changed for all servers
-      **Will use everything up to the next space for the string
-      ***& will always work for commands`
+      * Currently not server exclusive, so string will be changed for all servers
+      ** Will use everything up to the next space for the string
+      *** & will always work for commands`
     },
     {
       name: 'Examples:',
@@ -132,7 +137,8 @@ exports.roll = new MessageEmbed()
       value: `Rolls the specified dice and adds or subtracts any modifiers specified
       Cannot roll more than 10million dice or dice with more than 10million sides
       This was implemented to avoid the bot crashing
-      Dice rolled should be in XdY format and neither X or Y can be negative`
+      Dice rolled should be in XdY format and neither X or Y can be negative
+      If no input is given, will roll 1d20`
     },
     {
       name: 'Examples:',
@@ -167,6 +173,19 @@ exports.lol = new MessageEmbed()
     {
       name: 'Usage: &lol',
       value: 'Bot replies "You\'re so funny"'
+    }
+  )
+  .setFooter({ text: '<> is used to signify input. Do not include them in your command.' });
+
+exports.hello = new MessageEmbed()
+  .setColor('#C284FF')
+  .setAuthor({ name: 'Dungeons&Discord', iconURL: 'https://cdn.discordapp.com/avatars/933763649653342231/f9d7cd025f5e054e9f1065e1ac527f70.webp?size=160' })
+  .setTitle('Dungeons&Discord Help [hello]')
+  .setDescription('Help page for **hello** command')
+  .setFields(
+    {
+      name: 'Usage: &hello',
+      value: 'Bot replies "Hi"'
     }
   )
   .setFooter({ text: '<> is used to signify input. Do not include them in your command.' });

@@ -54,12 +54,13 @@ Skills and other proficiencies will have to be chosen by the player
 Randomly rolled stats are assigned based on the randomly chosen class
 ### lol
 Replies with "You're so funny!"
-### roll '<'dice | number> \[+|-] \[dice | number] \[+|-] \[dice | number]...
+### roll \[dice | number] \[+|-] \[dice | number] \[+|-] \[dice | number]...
 rolls any comination of dice and modifiers
 Rolls the specified dice and adds or subtracts any modifiers specified
 Cannot roll more than 10million dice or dice with more than 10million sides
 This was implemented to avoid the bot crashing
 Dice rolled should be in XdY format and neither X or Y can be negative
+If no input is given will roll 1d20
 #### Examples:
 ```&roll 1d20
 **Bot reply:** Your total is 16

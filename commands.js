@@ -7,9 +7,15 @@ exports.lol = (msg, ...args) => {
 exports.roll = (msg, ...args) => {
   let total = 0;
   let input;
+  let n = 0;
+  let roll;
   const rolls = [];
+  if (!args) {
+    roll = Math.floor((Math.random() * 20) + 1);
+    rolls.push(roll);
+    n += roll;
+  }
   for (let i = 0; i < args.length; i += 2) {
-    let n = 0;
     input = args[i];
     if (input.includes('d')) {
       const dice = input.split('d');
@@ -36,7 +42,7 @@ exports.roll = (msg, ...args) => {
           msg.reply('You do **NOT** need more than **TEN MILLION** dice');
           return;
         }
-        const roll = Math.floor((Math.random() * Number(dice[1]) + 1));
+        roll = Math.floor((Math.random() * Number(dice[1]) + 1));
         rolls.push(roll);
         n += roll;
       }
@@ -102,4 +108,8 @@ exports.help = (msg, cmd) => {
   } else {
     msg.author.send({ embeds: [helpPages[cmd]] });
   }
+};
+
+exports.hello = (msg) => {
+  msg.reply('Hi!');
 };
