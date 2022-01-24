@@ -10,7 +10,7 @@ exports.roll = (msg, ...args) => {
   let n = 0;
   let roll;
   const rolls = [];
-  if (!args) {
+  if (args.length === 0) {
     roll = Math.floor((Math.random() * 20) + 1);
     rolls.push(roll);
     n += roll;
