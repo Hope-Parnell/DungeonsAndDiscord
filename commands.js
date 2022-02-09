@@ -118,6 +118,19 @@ exports.rollStats = (msg, min, max) => {
   const stats = [];
   if (!min) { min = 8; }
   if (!max) { max = 18; }
+  min = Number(min);
+  max = Number(max);
+  if (!min || min < 0) {
+    msg.reply('<min> must be a positive number');
+    return;
+  }
+  if (!max || max < 0) {
+    msg.reply('<max> must be a positive number');
+    return;
+  }
+  if (min > max) {
+    msg.reply('<min> must be less than max');
+  }
   for (let i = 0; i < 6; i++) {
     const stat = Math.floor(Math.random() * (max - min + 1) + min);
     stats.push(stat);

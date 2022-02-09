@@ -202,12 +202,15 @@ exports.rollStats = new MessageEmbed()
       - if <min> is not specified it will set to 8
       - if <max> is not specified it will set to 18
       - to specify <max>, <min> must be specified
+      - <min> must be less than <max>
+      - <min> and <max> must be positive integers
       `
     },
     {
       name: 'Examples:',
       value: `&rollStats
-      **Bot reply**: Your Stats: 9, 13, 15, 16, 17, 18`
+      **Bot reply**: Your Stats: 9, 14, 10, 8, 13, 13
+      &rollStats 3`
     }
   )
   .setFooter({ text: '<> is used to signify input. Do not include them in your command.' });
