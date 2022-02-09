@@ -116,20 +116,22 @@ exports.hello = (msg) => {
 
 exports.rollStats = (msg, min, max) => {
   const stats = [];
+  const errors = [];
   if (!min) { min = 8; }
   if (!max) { max = 18; }
   min = Number(min);
   max = Number(max);
   if (!min || min < 0) {
-    msg.reply('<min> must be a positive number');
-    return;
+    errors.push('<min> must be a positive number');
   }
   if (!max || max < 0) {
-    msg.reply('<max> must be a positive number');
-    return;
+    errors.push('<max> must be a positive number');
   }
   if (min > max) {
-    msg.reply('<min> must be less than max');
+    errors.push('<min> must be less than max');
+  }
+  if (errors.length > 0) {
+    msg.reply(errors.join('\n'));
   }
   for (let i = 0; i < 6; i++) {
     const stat = Math.floor(Math.random() * (max - min + 1) + min);

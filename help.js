@@ -210,7 +210,14 @@ exports.rollStats = new MessageEmbed()
       name: 'Examples:',
       value: `&rollStats
       **Bot reply**: Your Stats: 9, 14, 10, 8, 13, 13
-      &rollStats 3`
+      &rollStats 3
+      **Bot reply**: Your Stats: 11, 5, 7, 9, 13, 4
+      &rollStats 5 11
+      **Bot reply**: Your Stats: 7, 8, 7, 8, 5, 8
+      &rollStats -1 5
+      **Bot reply**:
+      &rollStats 5 -3
+      **Bot reply**:`
     }
   )
   .setFooter({ text: '<> is used to signify input. Do not include them in your command.' });
