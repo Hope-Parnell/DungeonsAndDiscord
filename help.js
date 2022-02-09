@@ -215,9 +215,18 @@ exports.rollStats = new MessageEmbed()
       &rollStats 5 11
       **Bot reply**: Your Stats: 7, 8, 7, 8, 5, 8
       &rollStats -1 5
-      **Bot reply**:
-      &rollStats 5 -3
-      **Bot reply**:`
+      **Bot reply**: <min> must be a positive number
+                     Use \`&help rollStats\` for more information
+      &rollStats -1 -3
+      **Bot reply**: <min> must be a positive number
+                     <max> must be a positive number
+                     <min> must be less than <max>
+                     Use \`&help rollStats\` for more information
+      &rollStats 1 -5
+      **Bot reply**: <max> must be a positive number
+                     <min> must be less than <max>
+                     Use \`&help rollStats\` for more information
+      `
     }
   )
   .setFooter({ text: '<> is used to signify input. Do not include them in your command.' });
