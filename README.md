@@ -89,7 +89,7 @@ rolls a stat array of 6 stats
 - \[min] must be less than \[max]
 - \[min] and \[max] must be positive integers
 #### Examples:
-```&rollStats
+```rollStats
 **Bot reply:** Your Stats: 9, 14, 10, 8, 13, 13
 
 &rollStats 3
