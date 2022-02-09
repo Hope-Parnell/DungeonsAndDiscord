@@ -5,7 +5,8 @@ exports.helpMsg = new MessageEmbed()
   .setAuthor({ name: 'Dungeons&Discord', iconURL: 'https://cdn.discordapp.com/avatars/933763649653342231/f9d7cd025f5e054e9f1065e1ac527f70.webp?size=160' })
   .setTitle('Dungeons&Discord Help')
   .setDescription(`Help page for Dungeons&Discord Bot.
-  Default command prompt is '&'`)
+  Default command prompt is '&'
+  For more information about a specific command use &help <command>`)
   .setFields(
     {
       name: 'Core',
@@ -16,7 +17,8 @@ exports.helpMsg = new MessageEmbed()
     {
       name: 'D&D',
       value: `**roll** - rolls any comination of dice and modifiers
-      **hero** - randomly generates a basic character`
+      **hero** - randomly generates a basic character
+      **rollStats** - rolls an array of 6 stats`
     },
     {
       name: 'Misc',
@@ -210,18 +212,23 @@ exports.rollStats = new MessageEmbed()
       name: 'Examples:',
       value: `&rollStats
       **Bot reply**: Your Stats: 9, 14, 10, 8, 13, 13
+
       &rollStats 3
       **Bot reply**: Your Stats: 11, 5, 7, 9, 13, 4
+
       &rollStats 5 11
       **Bot reply**: Your Stats: 7, 8, 7, 8, 5, 8
+
       &rollStats -1 5
       **Bot reply**: <min> must be a positive number
       Use \`&help rollStats\` for more information
+
       &rollStats -1 -3
       **Bot reply**: <min> must be a positive number
       <max> must be a positive number
       <min> must be less than <max>
       Use \`&help rollStats\` for more information
+
       &rollStats 1 -5
       **Bot reply**: <max> must be a positive number
       <min> must be less than <max>

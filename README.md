@@ -79,4 +79,37 @@ Rolls: 3, 3, 5, 6, 1, 2, 4
 Rolls: 2, 3, 1
 &roll 2d8 + 7 - 2d4 + 6 - 2
 **Bot reply:** Your total is 14
-Rolls: 7, 1, 4, 1```
+Rolls: 7, 1, 4, 1
+```
+### &rollStats \[min] \[max]
+rolls a stat array of 6 stats
+- if \[min] is not specified it will set to 8
+- if \[max] is not specified it will set to 18
+- to specify \[max], \[min] must be specified
+- \[min] must be less than \[max]
+- \[min] and \[max] must be positive integers
+#### Examples:
+```&rollStats
+**Bot reply:** Your Stats: 9, 14, 10, 8, 13, 13
+
+&rollStats 3
+**Bot reply:** Your Stats: 11, 5, 7, 9, 13, 4
+
+&rollStats 5 11
+**Bot reply:** Your Stats: 7, 8, 7, 8, 5, 8
+
+&rollStats -1 5
+**Bot reply:** \[min] must be a positive number
+Use &help rollStats for more information
+
+&rollStats -1 -3
+**Bot reply:** \[min] must be a positive number
+[max] must be a positive number
+\[min] must be less than [max]
+Use &help rollStats for more information
+
+&rollStats 1 -5
+**Bot reply:** [max] must be a positive number
+\[min] must be less than [max]
+Use &help rollStats for more information
+```
