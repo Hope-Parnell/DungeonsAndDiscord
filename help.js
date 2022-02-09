@@ -189,3 +189,25 @@ exports.hello = new MessageEmbed()
     }
   )
   .setFooter({ text: '<> is used to signify input. Do not include them in your command.' });
+
+exports.rollStats = new MessageEmbed()
+  .setColor('#C284FF')
+  .setAuthor({ name: 'Dungeons&Discord', iconURL: 'https://cdn.discordapp.com/avatars/933763649653342231/f9d7cd025f5e054e9f1065e1ac527f70.webp?size=160' })
+  .setTitle('Dungeons&Discord Help [cmd]')
+  .setDescription('Help page for **cmd** command')
+  .setFields(
+    {
+      name: 'Usage: &rollStats <min> <max>',
+      value: `rolls a stat array of 6 stats
+      - if <min> is not specified it will set to 8
+      - if <max> is not specified it will set to 18
+      - to specify <max>, <min> must be specified
+      `
+    },
+    {
+      name: 'Examples:',
+      value: `&rollStats
+      **Bot reply**: Your Stats: 9, 13, 15, 16, 17, 18`
+    }
+  )
+  .setFooter({ text: '<> is used to signify input. Do not include them in your command.' });

@@ -113,3 +113,14 @@ exports.help = (msg, cmd) => {
 exports.hello = (msg) => {
   msg.reply('Hi!');
 };
+
+exports.rollStats = (msg, min, max) => {
+  const stats = [];
+  if (!min) { min = 8; }
+  if (!max) { max = 18; }
+  for (let i = 0; i < 6; i++) {
+    const stat = Math.floor(Math.random() * (max - min + 1) + min);
+    stats.push(stat);
+  }
+  msg.reply(`Your Stats: ${stats.join(', ')}`);
+};
