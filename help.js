@@ -193,8 +193,8 @@ exports.hello = new MessageEmbed()
 exports.rollStats = new MessageEmbed()
   .setColor('#C284FF')
   .setAuthor({ name: 'Dungeons&Discord', iconURL: 'https://cdn.discordapp.com/avatars/933763649653342231/f9d7cd025f5e054e9f1065e1ac527f70.webp?size=160' })
-  .setTitle('Dungeons&Discord Help [cmd]')
-  .setDescription('Help page for **cmd** command')
+  .setTitle('Dungeons&Discord Help [rollStats]')
+  .setDescription('Help page for **rollStats** command')
   .setFields(
     {
       name: 'Usage: &rollStats <min> <max>',
@@ -216,16 +216,16 @@ exports.rollStats = new MessageEmbed()
       **Bot reply**: Your Stats: 7, 8, 7, 8, 5, 8
       &rollStats -1 5
       **Bot reply**: <min> must be a positive number
-                     Use \`&help rollStats\` for more information
+      Use \`&help rollStats\` for more information
       &rollStats -1 -3
       **Bot reply**: <min> must be a positive number
-                     <max> must be a positive number
-                     <min> must be less than <max>
-                     Use \`&help rollStats\` for more information
+      <max> must be a positive number
+      <min> must be less than <max>
+      Use \`&help rollStats\` for more information
       &rollStats 1 -5
       **Bot reply**: <max> must be a positive number
-                     <min> must be less than <max>
-                     Use \`&help rollStats\` for more information
+      <min> must be less than <max>
+      Use \`&help rollStats\` for more information
       `
     }
   )
