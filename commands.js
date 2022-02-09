@@ -128,10 +128,11 @@ exports.rollStats = (msg, min, max) => {
     errors.push('<max> must be a positive number');
   }
   if (min > max) {
-    errors.push('<min> must be less than max');
+    errors.push('<min> must be less than <max>');
   }
   if (errors.length > 0) {
     msg.reply(errors.join('\n'));
+    return;
   }
   for (let i = 0; i < 6; i++) {
     const stat = Math.floor(Math.random() * (max - min + 1) + min);
