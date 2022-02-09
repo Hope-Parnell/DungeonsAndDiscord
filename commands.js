@@ -131,6 +131,7 @@ exports.rollStats = (msg, min, max) => {
     errors.push('<min> must be less than <max>');
   }
   if (errors.length > 0) {
+    errors.push('Use `&help rollStats` for more information');
     msg.reply(errors.join('\n'));
     return;
   }
